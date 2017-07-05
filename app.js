@@ -18,7 +18,10 @@ const port = 3000;
 const users = require('./routes/users');
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/users',users);
+app.use('/users', users);
+// passport stuff
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Index Route
